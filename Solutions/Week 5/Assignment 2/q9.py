@@ -19,7 +19,7 @@ def removeKeys(dictionary: Dict, K: int):
     keys_to_remove = []
     for key, value in dictt.items():
         if type(value) == int and value > K:
-            dictt.pop(key)
+            keys_to_remove.append(key)
 
     for key in keys_to_remove:
         dictt.pop(key)
