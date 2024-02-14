@@ -1,0 +1,8 @@
+f = open("hello.txt", "r")
+# x = f.readline()
+# print(x)
+# x = f.readline()
+# print(x)
+x = f.readlines()
+print(x)
+f.close()
