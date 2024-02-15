@@ -15,6 +15,9 @@ OUTPUT
 
 def calculateTotal(filename: str) -> int:
     try:
+        # Shortcut
+        # calculate = sum(list(map(int, f.read().split())))
+        # return calculate
         file = open(filename, "r")
         total = 0
         for line in file:
