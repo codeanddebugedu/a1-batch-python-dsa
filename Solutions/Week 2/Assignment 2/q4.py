@@ -7,11 +7,11 @@ is greater than or equal to the fourth number or not.
 """
 
 
-def calculate_average(num1: int, num2: int, num3: int) -> float:
+def calculateAverage(num1: int, num2: int, num3: int) -> float:
     return (num1 + num2 + num3) / 3
 
 
-def is_average_greater_or_equal(average: float, fourth_number: int) -> bool:
+def isAverageGreaterOrEqual(average: float, fourth_number: int) -> bool:
     return average >= fourth_number
 
 
@@ -20,12 +20,11 @@ num2: int = int(input("Enter the second number: "))
 num3: int = int(input("Enter the third number: "))
 num4: int = int(input("Enter the fourth number: "))
 
-average_value: float = calculate_average(num1, num2, num3)
+average_value: float = calculateAverage(num1, num2, num3)
 
 # Check if the average is greater than or equal to the fourth number
-result = is_average_greater_or_equal(average_value, num4)
+result = isAverageGreaterOrEqual(average_value, num4)
 
-# Display the result
 print(f"The average of {num1}, {num2}, and {num3} is: {average_value}")
 
 if result:
