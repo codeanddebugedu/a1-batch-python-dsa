@@ -5,10 +5,11 @@ Write a program for Sum of number digits in List.
 from typing import List
 
 
-def sumOfDigitsInList(nums: List[int]) -> List[int]:
+def digitSum(num: int) -> int:
+    return sum(int(digit) for digit in str(num))
 
-    def digitSum(num: int) -> int:
-        return sum(int(digit) for digit in str(num))
+
+def sumOfDigitsInList(nums: List[int]) -> List[int]:
 
     return [digitSum(num) for num in nums]
 
