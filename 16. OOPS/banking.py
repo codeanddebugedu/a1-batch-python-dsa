@@ -1,3 +1,4 @@
+import pickle
 from random import randint
 from typing import List
 
@@ -34,6 +35,18 @@ class Banking:
 
 accounts: List[Banking] = []
 
+try:
+    with open("accounts.txt", "rb") as f:
+        accounts = pickle.load(f)
+except:
+    print("Accounts.txt is not created, it will create automatically")
+
+
+def dump_data():
+    with open("accounts.txt", "wb") as f:
+        pickle.dump(accounts, f)
+
+
 while True:
     print(
         """\n1. Add Account
@@ -49,6 +62,7 @@ while True:
         obj = Banking()
         accounts.append(obj)
         print("Account created")
+        dump_data()
     elif choice == 2:
         print(accounts)
         if len(accounts) == 0:
@@ -69,6 +83,7 @@ while True:
             if bank.account_number == acc_no:
                 dp_amt = float(input("Enter amount to deposit = "))
                 bank.deposit(dp_amt)
+                dump_data()
                 break
         else:
             print("No account found")
