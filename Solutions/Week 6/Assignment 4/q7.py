@@ -4,10 +4,8 @@ def reverseLines(input_file: str, output_file: str) -> None:
             lines = file_in.readlines()
 
         with open(output_file, "w") as file_out:
-            for line in lines:
-                line = line.strip()
-                reversed_line = line[::-1]
-                file_out.write(reversed_line + "\n")
+            for line in lines[::-1]:
+                file_out.write(line)
 
     except FileNotFoundError:
         print("Error: Input file not found.")
